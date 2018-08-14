@@ -1,0 +1,9 @@
+.hgignore
+.hg
+.idea
+.ipynb_*
+testcases/baroni/*
+rtest/*
+dtgeostats/Rtest*
+dtgeostats/test*
+dtgeostats/.idea/*

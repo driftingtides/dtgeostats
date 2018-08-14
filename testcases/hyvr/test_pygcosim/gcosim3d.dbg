@@ -1,0 +1,905 @@
+ G C O S I M 3 D version 1.1  July 92
+ ====================================
+
+J. Jaime Gomez-Hernandez
+Escuela de Ing. de Caminos, Univ. Politecnica, 46071 Valencia, SPAIN
+
+copyright Stanford Center for Reservoir Forecasting (SCRF)
+      and Empresa Nacional de Residuos (ENRESA)
+
+
+seed..................:  32
+number of simulations.:  2
+grid spacing..........:       1.000,     1.000,     0.100
+origin................:       0.000      0.000      0.000
+domain size...........:    50   20  100
+subgrid from..........:     1    1    1
+subgrid to............:    50   20  100
+search ellipsoid radii:   100.000    100.000     20.000
+
+Direction cosines for search neighborhood
+1.000000  0.000000  0.000000  
+0.000000  1.000000  0.000000  
+0.000000  0.000000  1.000000  
+
+no rotation
+
+max. point per octant.: 2
+max. overall data.....: 12
+debugging flag........: 0
+
+Number of variables.:  2
+N. of var. for sim..:  2 -->  1 2
+==========================
+Expected Values
+Marginal means     :    -6.160
+Marginal means     :     0.257
+Nugget.......................:  0.000
+Max Cova (for linear models).: 1000.000
+
+Number of structures --> 1
+
+Structure: 1, type...........: Exponential
+Structure: 1, sill...........:  6.000
+Structure: 1, range (power for linear model) on rotated x: 10.800
+Structure: 1, range (power for linear model) on rotated y: 10.800
+Structure: 1, range (power for linear model) on rotated z:  1.000
+
+Direction cosines
+   1.000   0.000   0.000
+   0.000   0.833   0.000
+   0.000   0.000   1.667
+Nugget.......................:  0.000
+Max Cova (for linear models).: 1000.000
+
+Number of structures --> 1
+
+Structure: 1, type...........: Exponential
+Structure: 1, sill...........:  0.130
+Structure: 1, range (power for linear model) on rotated x: 11.100
+Structure: 1, range (power for linear model) on rotated y: 11.100
+Structure: 1, range (power for linear model) on rotated z:  1.000
+
+Direction cosines
+   1.000   0.000   0.000
+   0.000   0.833   0.000
+   0.000   0.000   1.667
+Nugget.......................:  0.000
+Max Cova (for linear models).: 1000.000
+
+Number of structures --> 1
+
+Structure: 1, type...........: Exponential
+Structure: 1, sill...........:  0.004
+Structure: 1, range (power for linear model) on rotated x: 12.000
+Structure: 1, range (power for linear model) on rotated y: 12.000
+Structure: 1, range (power for linear model) on rotated z:  1.000
+
+Direction cosines
+   1.000   0.000   0.000
+   0.000   0.833   0.000
+   0.000   0.000   1.667
+
+
+Some conditioning points follow: x, y, z, var and value
+Number of data: 2500
+    22.500,     9.500,     0.050,  1,    -5.083
+    22.500,     9.500,     0.150,  1,    -4.847
+    22.500,     9.500,     0.250,  1,    -3.373
+    22.500,     9.500,     0.350,  1,    -3.327
+    22.500,     9.500,     0.450,  1,    -4.259
+    22.500,     9.500,     0.550,  1,    -5.032
+    22.500,     9.500,     0.650,  1,    -5.265
+    22.500,     9.500,     0.750,  1,    -4.784
+    22.500,     9.500,     0.850,  1,    -4.641
+    22.500,     9.500,     0.950,  1,    -4.184
+    39.500,    10.500,     9.050,  1,    -4.823
+    39.500,    10.500,     9.150,  1,    -4.968
+    39.500,    10.500,     9.250,  1,    -4.952
+    39.500,    10.500,     9.350,  1,    -4.135
+    39.500,    10.500,     9.450,  1,    -3.535
+    39.500,    10.500,     9.550,  1,    -8.888
+    39.500,    10.500,     9.650,  1,    -8.778
+    39.500,    10.500,     9.750,  1,    -9.264
+    39.500,    10.500,     9.850,  1,    -9.419
+    39.500,    10.500,     9.950,  1,    -8.353
+
+
+Number of points in template -------> 8376011
+
+
+Classification of points
+   22.50     9.50     0.05,   1,    -5.08 assigned to             24   11    2
+                                 value -5.083 
+   22.50     9.50     0.15,   1,    -4.85 assigned to             24   11    3
+                                 value -4.847 
+   22.50     9.50     0.25,   1,    -3.37 assigned to             24   11    4
+                                 value -3.373 
+   22.50     9.50     0.35,   1,    -3.33 assigned to             24   11    5
+                                 value -3.327 
+   22.50     9.50     0.45,   1,    -4.26 assigned to             24   11    6
+                                 value -4.259 
+   22.50     9.50     0.55,   1,    -5.03 assigned to             24   11    7
+                                 value -5.032 
+   22.50     9.50     0.65,   1,    -5.26 cannot be assigned to   24   11    7
+        because another sample is already there
+   22.50     9.50     0.75,   1,    -4.78 assigned to             24   11    9
+                                 value -4.784 
+   22.50     9.50     0.85,   1,    -4.64 assigned to             24   11   10
+                                 value -4.641 
+   22.50     9.50     0.95,   1,    -4.18 assigned to             24   11   11
+                                 value -4.184 
+   22.50     9.50     1.05,   1,    -4.69 cannot be assigned to   24   11   11
+        because another sample is already there
+   22.50     9.50     1.55,   1,    -5.83 cannot be assigned to   24   11   16
+        because another sample is already there
+   22.50     9.50     2.35,   1,    -3.95 cannot be assigned to   24   11   24
+        because another sample is already there
+   22.50     9.50     2.85,   1,    -4.27 cannot be assigned to   24   11   29
+        because another sample is already there
+   22.50     9.50     4.45,   1,    -5.48 cannot be assigned to   24   11   45
+        because another sample is already there
+   22.50     9.50     4.95,   1,    -4.28 cannot be assigned to   24   11   50
+        because another sample is already there
+   22.50     9.50     5.45,   1,    -5.90 cannot be assigned to   24   11   55
+        because another sample is already there
+   22.50     9.50     5.95,   1,   -10.48 cannot be assigned to   24   11   60
+        because another sample is already there
+   22.50     9.50     8.15,   1,    -4.86 cannot be assigned to   24   11   82
+        because another sample is already there
+   22.50     9.50     8.65,   1,    -3.62 cannot be assigned to   24   11   87
+        because another sample is already there
+   22.50     9.50     9.15,   1,    -4.64 cannot be assigned to   24   11   92
+        because another sample is already there
+   22.50     9.50     9.65,   1,    -7.88 cannot be assigned to   24   11   97
+        because another sample is already there
+   22.50     9.50     9.95,   1    -7.93 is out of bounds     (  24   11  101)
+   48.50     2.50     0.65,   1,    -4.99 cannot be assigned to   50    4    7
+        because another sample is already there
+   48.50     2.50     1.05,   1,    -4.65 cannot be assigned to   50    4   11
+        because another sample is already there
+   48.50     2.50     1.55,   1,    -4.64 cannot be assigned to   50    4   16
+        because another sample is already there
+   48.50     2.50     2.35,   1,    -3.69 cannot be assigned to   50    4   24
+        because another sample is already there
+   48.50     2.50     2.85,   1,    -4.26 cannot be assigned to   50    4   29
+        because another sample is already there
+   48.50     2.50     4.45,   1,    -7.59 cannot be assigned to   50    4   45
+        because another sample is already there
+   48.50     2.50     4.95,   1,    -9.13 cannot be assigned to   50    4   50
+        because another sample is already there
+   48.50     2.50     5.45,   1,   -10.07 cannot be assigned to   50    4   55
+        because another sample is already there
+   48.50     2.50     5.95,   1,    -9.31 cannot be assigned to   50    4   60
+        because another sample is already there
+   48.50     2.50     8.15,   1,    -9.60 cannot be assigned to   50    4   82
+        because another sample is already there
+   48.50     2.50     8.65,   1,   -10.33 cannot be assigned to   50    4   87
+        because another sample is already there
+   48.50     2.50     9.15,   1,    -3.62 cannot be assigned to   50    4   92
+        because another sample is already there
+   48.50     2.50     9.65,   1,    -7.82 cannot be assigned to   50    4   97
+        because another sample is already there
+   48.50     2.50     9.95,   1    -7.71 is out of bounds     (  50    4  101)
+   31.50    13.50     0.65,   1,    -4.80 cannot be assigned to   33   15    7
+        because another sample is already there
+   31.50    13.50     1.05,   1,    -7.78 cannot be assigned to   33   15   11
+        because another sample is already there
+   31.50    13.50     1.55,   1,    -2.98 cannot be assigned to   33   15   16
+        because another sample is already there
+   31.50    13.50     2.35,   1,    -4.12 cannot be assigned to   33   15   24
+        because another sample is already there
+   31.50    13.50     2.85,   1,    -4.41 cannot be assigned to   33   15   29
+        because another sample is already there
+   31.50    13.50     4.45,   1,    -5.01 cannot be assigned to   33   15   45
+        because another sample is already there
+   31.50    13.50     4.95,   1,    -3.48 cannot be assigned to   33   15   50
+        because another sample is already there
+   31.50    13.50     5.45,   1,    -3.72 cannot be assigned to   33   15   55
+        because another sample is already there
+   31.50    13.50     5.95,   1,   -10.90 cannot be assigned to   33   15   60
+        because another sample is already there
+   31.50    13.50     8.15,   1,    -6.35 cannot be assigned to   33   15   82
+        because another sample is already there
+   31.50    13.50     8.65,   1,    -4.31 cannot be assigned to   33   15   87
+        because another sample is already there
+   31.50    13.50     9.15,   1,    -5.22 cannot be assigned to   33   15   92
+        because another sample is already there
+   31.50    13.50     9.65,   1,    -8.14 cannot be assigned to   33   15   97
+        because another sample is already there
+   31.50    13.50     9.95,   1    -9.72 is out of bounds     (  33   15  101)
+    7.50    18.50     0.65,   1,    -5.34 cannot be assigned to    9   20    7
+        because another sample is already there
+    7.50    18.50     1.05,   1,    -4.50 cannot be assigned to    9   20   11
+        because another sample is already there
+    7.50    18.50     1.55,   1,    -5.86 cannot be assigned to    9   20   16
+        because another sample is already there
+    7.50    18.50     2.35,   1,    -4.55 cannot be assigned to    9   20   24
+        because another sample is already there
+    7.50    18.50     2.85,   1,    -6.16 cannot be assigned to    9   20   29
+        because another sample is already there
+    7.50    18.50     4.45,   1,    -8.50 cannot be assigned to    9   20   45
+        because another sample is already there
+    7.50    18.50     4.95,   1,    -9.70 cannot be assigned to    9   20   50
+        because another sample is already there
+    7.50    18.50     5.45,   1,    -6.06 cannot be assigned to    9   20   55
+        because another sample is already there
+    7.50    18.50     5.95,   1,    -8.44 cannot be assigned to    9   20   60
+        because another sample is already there
+    7.50    18.50     8.15,   1,    -8.19 cannot be assigned to    9   20   82
+        because another sample is already there
+    7.50    18.50     8.65,   1,    -7.58 cannot be assigned to    9   20   87
+        because another sample is already there
+    7.50    18.50     9.15,   1,    -8.46 cannot be assigned to    9   20   92
+        because another sample is already there
+    7.50    18.50     9.65,   1,    -7.88 cannot be assigned to    9   20   97
+        because another sample is already there
+    7.50    18.50     9.95,   1    -8.97 is out of bounds     (   9   20  101)
+   13.50    15.50     0.65,   1,    -3.97 cannot be assigned to   15   17    7
+        because another sample is already there
+   13.50    15.50     1.05,   1,    -4.41 cannot be assigned to   15   17   11
+        because another sample is already there
+   13.50    15.50     1.55,   1,    -3.08 cannot be assigned to   15   17   16
+        because another sample is already there
+   13.50    15.50     2.35,   1,    -3.85 cannot be assigned to   15   17   24
+        because another sample is already there
+   13.50    15.50     2.85,   1,    -5.48 cannot be assigned to   15   17   29
+        because another sample is already there
+   13.50    15.50     4.45,   1,    -3.64 cannot be assigned to   15   17   45
+        because another sample is already there
+   13.50    15.50     4.95,   1,    -4.47 cannot be assigned to   15   17   50
+        because another sample is already there
+   13.50    15.50     5.45,   1,    -4.31 cannot be assigned to   15   17   55
+        because another sample is already there
+   13.50    15.50     5.95,   1,   -10.16 cannot be assigned to   15   17   60
+        because another sample is already there
+   13.50    15.50     8.15,   1,    -8.78 cannot be assigned to   15   17   82
+        because another sample is already there
+   13.50    15.50     8.65,   1,    -3.83 cannot be assigned to   15   17   87
+        because another sample is already there
+   13.50    15.50     9.15,   1,    -5.67 cannot be assigned to   15   17   92
+        because another sample is already there
+   13.50    15.50     9.65,   1,    -9.42 cannot be assigned to   15   17   97
+        because another sample is already there
+   13.50    15.50     9.95,   1    -8.44 is out of bounds     (  15   17  101)
+   28.50    14.50     0.65,   1,    -4.26 cannot be assigned to   30   16    7
+        because another sample is already there
+   28.50    14.50     1.05,   1,    -8.54 cannot be assigned to   30   16   11
+        because another sample is already there
+   28.50    14.50     1.55,   1,    -7.35 cannot be assigned to   30   16   16
+        because another sample is already there
+   28.50    14.50     2.35,   1,    -2.93 cannot be assigned to   30   16   24
+        because another sample is already there
+   28.50    14.50     2.85,   1,    -2.44 cannot be assigned to   30   16   29
+        because another sample is already there
+   28.50    14.50     4.45,   1,    -4.32 cannot be assigned to   30   16   45
+        because another sample is already there
+   28.50    14.50     4.95,   1,    -3.71 cannot be assigned to   30   16   50
+        because another sample is already there
+   28.50    14.50     5.45,   1,    -4.17 cannot be assigned to   30   16   55
+        because another sample is already there
+   28.50    14.50     5.95,   1,   -11.73 cannot be assigned to   30   16   60
+        because another sample is already there
+   28.50    14.50     8.15,   1,    -5.77 cannot be assigned to   30   16   82
+        because another sample is already there
+   28.50    14.50     8.65,   1,    -4.66 cannot be assigned to   30   16   87
+        because another sample is already there
+   28.50    14.50     9.15,   1,    -4.79 cannot be assigned to   30   16   92
+        because another sample is already there
+   28.50    14.50     9.65,   1,    -9.12 cannot be assigned to   30   16   97
+        because another sample is already there
+   28.50    14.50     9.95,   1    -7.36 is out of bounds     (  30   16  101)
+    3.50    17.50     0.65,   1,    -4.73 cannot be assigned to    5   19    7
+        because another sample is already there
+    3.50    17.50     1.05,   1,    -5.56 cannot be assigned to    5   19   11
+        because another sample is already there
+    3.50    17.50     1.55,   1,    -4.46 cannot be assigned to    5   19   16
+        because another sample is already there
+    3.50    17.50     2.35,   1,    -5.08 cannot be assigned to    5   19   24
+        because another sample is already there
+    3.50    17.50     2.85,   1,    -6.96 cannot be assigned to    5   19   29
+        because another sample is already there
+    3.50    17.50     4.45,   1,    -7.50 cannot be assigned to    5   19   45
+        because another sample is already there
+    3.50    17.50     4.95,   1,    -9.54 cannot be assigned to    5   19   50
+        because another sample is already there
+    3.50    17.50     5.45,   1,    -8.98 cannot be assigned to    5   19   55
+        because another sample is already there
+    3.50    17.50     5.95,   1,    -5.63 cannot be assigned to    5   19   60
+        because another sample is already there
+    3.50    17.50     8.15,   1,    -6.49 cannot be assigned to    5   19   82
+        because another sample is already there
+    3.50    17.50     8.65,   1,    -6.47 cannot be assigned to    5   19   87
+        because another sample is already there
+    3.50    17.50     9.15,   1,    -8.38 cannot be assigned to    5   19   92
+        because another sample is already there
+    3.50    17.50     9.65,   1,    -8.75 cannot be assigned to    5   19   97
+        because another sample is already there
+    3.50    17.50     9.95,   1   -10.09 is out of bounds     (   5   19  101)
+    1.50    12.50     0.65,   1,    -4.21 cannot be assigned to    3   14    7
+        because another sample is already there
+    1.50    12.50     1.05,   1,    -6.46 cannot be assigned to    3   14   11
+        because another sample is already there
+    1.50    12.50     1.55,   1,    -3.88 cannot be assigned to    3   14   16
+        because another sample is already there
+    1.50    12.50     2.35,   1,    -5.25 cannot be assigned to    3   14   24
+        because another sample is already there
+    1.50    12.50     2.85,   1,    -8.06 cannot be assigned to    3   14   29
+        because another sample is already there
+    1.50    12.50     4.45,   1,    -8.77 cannot be assigned to    3   14   45
+        because another sample is already there
+    1.50    12.50     4.95,   1,    -7.97 cannot be assigned to    3   14   50
+        because another sample is already there
+    1.50    12.50     5.45,   1,    -8.11 cannot be assigned to    3   14   55
+        because another sample is already there
+    1.50    12.50     5.95,   1,    -8.07 cannot be assigned to    3   14   60
+        because another sample is already there
+    1.50    12.50     8.15,   1,    -9.13 cannot be assigned to    3   14   82
+        because another sample is already there
+    1.50    12.50     8.65,   1,    -7.98 cannot be assigned to    3   14   87
+        because another sample is already there
+    1.50    12.50     9.15,   1,    -9.29 cannot be assigned to    3   14   92
+        because another sample is already there
+    1.50    12.50     9.65,   1,    -8.96 cannot be assigned to    3   14   97
+        because another sample is already there
+    1.50    12.50     9.95,   1    -9.42 is out of bounds     (   3   14  101)
+   22.50    15.50     0.65,   1,    -5.02 cannot be assigned to   24   17    7
+        because another sample is already there
+   22.50    15.50     1.05,   1,    -4.30 cannot be assigned to   24   17   11
+        because another sample is already there
+   22.50    15.50     1.55,   1,    -9.46 cannot be assigned to   24   17   16
+        because another sample is already there
+   22.50    15.50     2.35,   1,    -4.46 cannot be assigned to   24   17   24
+        because another sample is already there
+   22.50    15.50     2.85,   1,    -4.85 cannot be assigned to   24   17   29
+        because another sample is already there
+   22.50    15.50     4.45,   1,    -6.25 cannot be assigned to   24   17   45
+        because another sample is already there
+   22.50    15.50     4.95,   1,    -4.85 cannot be assigned to   24   17   50
+        because another sample is already there
+   22.50    15.50     5.45,   1,    -5.50 cannot be assigned to   24   17   55
+        because another sample is already there
+   22.50    15.50     5.95,   1,    -8.66 cannot be assigned to   24   17   60
+        because another sample is already there
+   22.50    15.50     8.15,   1,    -4.85 cannot be assigned to   24   17   82
+        because another sample is already there
+   22.50    15.50     8.65,   1,    -4.01 cannot be assigned to   24   17   87
+        because another sample is already there
+   22.50    15.50     9.15,   1,    -4.77 cannot be assigned to   24   17   92
+        because another sample is already there
+   22.50    15.50     9.65,   1,    -9.38 cannot be assigned to   24   17   97
+        because another sample is already there
+   22.50    15.50     9.95,   1    -9.00 is out of bounds     (  24   17  101)
+   33.50    14.50     0.65,   1,    -6.59 cannot be assigned to   35   16    7
+        because another sample is already there
+   33.50    14.50     1.05,   1,    -7.90 cannot be assigned to   35   16   11
+        because another sample is already there
+   33.50    14.50     1.55,   1,    -4.40 cannot be assigned to   35   16   16
+        because another sample is already there
+   33.50    14.50     2.35,   1,    -3.12 cannot be assigned to   35   16   24
+        because another sample is already there
+   33.50    14.50     2.85,   1,    -5.52 cannot be assigned to   35   16   29
+        because another sample is already there
+   33.50    14.50     4.45,   1,    -3.90 cannot be assigned to   35   16   45
+        because another sample is already there
+   33.50    14.50     4.95,   1,    -4.45 cannot be assigned to   35   16   50
+        because another sample is already there
+   33.50    14.50     5.45,   1,    -4.68 cannot be assigned to   35   16   55
+        because another sample is already there
+   33.50    14.50     5.95,   1,   -13.14 cannot be assigned to   35   16   60
+        because another sample is already there
+   33.50    14.50     8.15,   1,    -7.49 cannot be assigned to   35   16   82
+        because another sample is already there
+   33.50    14.50     8.65,   1,    -4.68 cannot be assigned to   35   16   87
+        because another sample is already there
+   33.50    14.50     9.15,   1,    -4.36 cannot be assigned to   35   16   92
+        because another sample is already there
+   33.50    14.50     9.65,   1,   -10.15 cannot be assigned to   35   16   97
+        because another sample is already there
+   33.50    14.50     9.95,   1    -8.30 is out of bounds     (  35   16  101)
+   26.50    19.50     0.05,   1    -3.61 is out of bounds     (  28   21    2)
+   26.50    19.50     0.15,   1    -3.30 is out of bounds     (  28   21    3)
+   26.50    19.50     0.25,   1    -4.19 is out of bounds     (  28   21    4)
+   26.50    19.50     0.35,   1    -4.64 is out of bounds     (  28   21    5)
+   26.50    19.50     0.45,   1    -4.21 is out of bounds     (  28   21    6)
+   26.50    19.50     0.55,   1    -3.46 is out of bounds     (  28   21    7)
+   26.50    19.50     0.65,   1    -3.11 is out of bounds     (  28   21    7)
+   26.50    19.50     0.75,   1    -3.20 is out of bounds     (  28   21    9)
+   26.50    19.50     0.85,   1    -3.31 is out of bounds     (  28   21   10)
+   26.50    19.50     0.95,   1    -3.06 is out of bounds     (  28   21   11)
+   26.50    19.50     1.05,   1    -8.15 is out of bounds     (  28   21   11)
+   26.50    19.50     1.15,   1    -7.07 is out of bounds     (  28   21   13)
+   26.50    19.50     1.25,   1    -8.51 is out of bounds     (  28   21   14)
+   26.50    19.50     1.35,   1    -8.27 is out of bounds     (  28   21   15)
+   26.50    19.50     1.45,   1    -7.99 is out of bounds     (  28   21   16)
+   26.50    19.50     1.55,   1    -8.71 is out of bounds     (  28   21   16)
+   26.50    19.50     1.65,   1    -8.80 is out of bounds     (  28   21   18)
+   26.50    19.50     1.75,   1    -8.28 is out of bounds     (  28   21   19)
+   26.50    19.50     1.85,   1    -9.11 is out of bounds     (  28   21   20)
+   26.50    19.50     1.95,   1    -8.43 is out of bounds     (  28   21   21)
+   26.50    19.50     2.05,   1    -8.01 is out of bounds     (  28   21   22)
+   26.50    19.50     2.15,   1    -7.79 is out of bounds     (  28   21   23)
+   26.50    19.50     2.25,   1    -7.39 is out of bounds     (  28   21   24)
+   26.50    19.50     2.35,   1    -7.61 is out of bounds     (  28   21   24)
+   26.50    19.50     2.45,   1    -8.10 is out of bounds     (  28   21   26)
+   26.50    19.50     2.55,   1    -4.48 is out of bounds     (  28   21   27)
+   26.50    19.50     2.65,   1    -3.75 is out of bounds     (  28   21   28)
+   26.50    19.50     2.75,   1    -3.19 is out of bounds     (  28   21   29)
+   26.50    19.50     2.85,   1    -2.65 is out of bounds     (  28   21   29)
+   26.50    19.50     2.95,   1    -3.57 is out of bounds     (  28   21   31)
+   26.50    19.50     3.05,   1    -3.89 is out of bounds     (  28   21   32)
+   26.50    19.50     3.15,   1    -3.27 is out of bounds     (  28   21   33)
+   26.50    19.50     3.25,   1    -3.24 is out of bounds     (  28   21   34)
+   26.50    19.50     3.35,   1    -3.64 is out of bounds     (  28   21   35)
+   26.50    19.50     3.45,   1    -4.05 is out of bounds     (  28   21   36)
+   26.50    19.50     3.55,   1    -4.72 is out of bounds     (  28   21   37)
+   26.50    19.50     3.65,   1    -5.24 is out of bounds     (  28   21   38)
+   26.50    19.50     3.75,   1    -8.88 is out of bounds     (  28   21   39)
+   26.50    19.50     3.85,   1    -8.17 is out of bounds     (  28   21   40)
+   26.50    19.50     3.95,   1    -8.27 is out of bounds     (  28   21   41)
+   26.50    19.50     4.05,   1    -8.21 is out of bounds     (  28   21   42)
+   26.50    19.50     4.15,   1    -8.23 is out of bounds     (  28   21   43)
+   26.50    19.50     4.25,   1    -5.97 is out of bounds     (  28   21   44)
+   26.50    19.50     4.35,   1    -5.75 is out of bounds     (  28   21   45)
+   26.50    19.50     4.45,   1    -4.63 is out of bounds     (  28   21   45)
+   26.50    19.50     4.55,   1    -3.38 is out of bounds     (  28   21   47)
+   26.50    19.50     4.65,   1    -3.34 is out of bounds     (  28   21   48)
+   26.50    19.50     4.75,   1    -3.67 is out of bounds     (  28   21   49)
+   26.50    19.50     4.85,   1    -3.46 is out of bounds     (  28   21   50)
+   26.50    19.50     4.95,   1    -3.71 is out of bounds     (  28   21   50)
+   26.50    19.50     5.05,   1    -3.81 is out of bounds     (  28   21   52)
+   26.50    19.50     5.15,   1    -4.27 is out of bounds     (  28   21   53)
+   26.50    19.50     5.25,   1    -4.92 is out of bounds     (  28   21   54)
+   26.50    19.50     5.35,   1    -5.09 is out of bounds     (  28   21   55)
+   26.50    19.50     5.45,   1    -6.07 is out of bounds     (  28   21   55)
+   26.50    19.50     5.55,   1    -6.55 is out of bounds     (  28   21   57)
+   26.50    19.50     5.65,   1    -6.22 is out of bounds     (  28   21   58)
+   26.50    19.50     5.75,   1    -4.93 is out of bounds     (  28   21   59)
+   26.50    19.50     5.85,   1    -5.20 is out of bounds     (  28   21   60)
+   26.50    19.50     5.95,   1    -7.16 is out of bounds     (  28   21   60)
+   26.50    19.50     6.05,   1    -7.47 is out of bounds     (  28   21   62)
+   26.50    19.50     6.15,   1    -7.82 is out of bounds     (  28   21   63)
+   26.50    19.50     6.25,   1   -11.55 is out of bounds     (  28   21   64)
+   26.50    19.50     6.35,   1   -12.47 is out of bounds     (  28   21   65)
+   26.50    19.50     6.45,   1   -12.26 is out of bounds     (  28   21   66)
+   26.50    19.50     6.55,   1   -11.76 is out of bounds     (  28   21   67)
+   26.50    19.50     6.65,   1   -10.80 is out of bounds     (  28   21   68)
+   26.50    19.50     6.75,   1   -11.32 is out of bounds     (  28   21   69)
+   26.50    19.50     6.85,   1    -8.63 is out of bounds     (  28   21   70)
+   26.50    19.50     6.95,   1    -7.93 is out of bounds     (  28   21   71)
+   26.50    19.50     7.05,   1    -7.20 is out of bounds     (  28   21   72)
+   26.50    19.50     7.15,   1    -7.77 is out of bounds     (  28   21   73)
+   26.50    19.50     7.25,   1    -7.64 is out of bounds     (  28   21   74)
+   26.50    19.50     7.35,   1    -6.95 is out of bounds     (  28   21   75)
+   26.50    19.50     7.45,   1    -7.22 is out of bounds     (  28   21   76)
+   26.50    19.50     7.55,   1    -7.52 is out of bounds     (  28   21   77)
+   26.50    19.50     7.65,   1    -7.74 is out of bounds     (  28   21   78)
+   26.50    19.50     7.75,   1    -7.22 is out of bounds     (  28   21   79)
+   26.50    19.50     7.85,   1    -7.85 is out of bounds     (  28   21   80)
+   26.50    19.50     7.95,   1    -7.92 is out of bounds     (  28   21   81)
+   26.50    19.50     8.05,   1    -8.53 is out of bounds     (  28   21   82)
+   26.50    19.50     8.15,   1    -8.97 is out of bounds     (  28   21   82)
+   26.50    19.50     8.25,   1    -8.33 is out of bounds     (  28   21   84)
+   26.50    19.50     8.35,   1    -8.51 is out of bounds     (  28   21   85)
+   26.50    19.50     8.45,   1    -8.43 is out of bounds     (  28   21   86)
+   26.50    19.50     8.55,   1    -8.85 is out of bounds     (  28   21   87)
+   26.50    19.50     8.65,   1    -9.31 is out of bounds     (  28   21   87)
+   26.50    19.50     8.75,   1    -8.12 is out of bounds     (  28   21   89)
+   26.50    19.50     8.85,   1    -8.49 is out of bounds     (  28   21   90)
+   26.50    19.50     8.95,   1    -8.43 is out of bounds     (  28   21   91)
+   26.50    19.50     9.05,   1    -8.40 is out of bounds     (  28   21   92)
+   26.50    19.50     9.15,   1    -9.52 is out of bounds     (  28   21   92)
+   26.50    19.50     9.25,   1    -8.99 is out of bounds     (  28   21   94)
+   26.50    19.50     9.35,   1    -8.96 is out of bounds     (  28   21   95)
+   26.50    19.50     9.45,   1    -9.13 is out of bounds     (  28   21   96)
+   26.50    19.50     9.55,   1    -9.06 is out of bounds     (  28   21   97)
+   26.50    19.50     9.65,   1    -9.04 is out of bounds     (  28   21   97)
+   26.50    19.50     9.75,   1    -9.16 is out of bounds     (  28   21   99)
+   26.50    19.50     9.85,   1    -9.49 is out of bounds     (  28   21  100)
+   26.50    19.50     9.95,   1    -9.07 is out of bounds     (  28   21  101)
+   34.50    10.50     0.65,   1,    -5.61 cannot be assigned to   36   12    7
+        because another sample is already there
+   34.50    10.50     1.05,   1,    -4.04 cannot be assigned to   36   12   11
+        because another sample is already there
+   34.50    10.50     1.55,   1,    -4.24 cannot be assigned to   36   12   16
+        because another sample is already there
+   34.50    10.50     2.35,   1,    -2.86 cannot be assigned to   36   12   24
+        because another sample is already there
+   34.50    10.50     2.85,   1,    -4.64 cannot be assigned to   36   12   29
+        because another sample is already there
+   34.50    10.50     4.45,   1,    -2.65 cannot be assigned to   36   12   45
+        because another sample is already there
+   34.50    10.50     4.95,   1,    -4.05 cannot be assigned to   36   12   50
+        because another sample is already there
+   34.50    10.50     5.45,   1,    -4.53 cannot be assigned to   36   12   55
+        because another sample is already there
+   34.50    10.50     5.95,   1,   -11.53 cannot be assigned to   36   12   60
+        because another sample is already there
+   34.50    10.50     8.15,   1,    -3.80 cannot be assigned to   36   12   82
+        because another sample is already there
+   34.50    10.50     8.65,   1,    -5.59 cannot be assigned to   36   12   87
+        because another sample is already there
+   34.50    10.50     9.15,   1,    -5.14 cannot be assigned to   36   12   92
+        because another sample is already there
+   34.50    10.50     9.65,   1,   -10.23 cannot be assigned to   36   12   97
+        because another sample is already there
+   34.50    10.50     9.95,   1    -9.67 is out of bounds     (  36   12  101)
+   38.50    13.50     0.65,   1,    -5.14 cannot be assigned to   40   15    7
+        because another sample is already there
+   38.50    13.50     1.05,   1,    -5.98 cannot be assigned to   40   15   11
+        because another sample is already there
+   38.50    13.50     1.55,   1,    -4.51 cannot be assigned to   40   15   16
+        because another sample is already there
+   38.50    13.50     2.35,   1,    -4.03 cannot be assigned to   40   15   24
+        because another sample is already there
+   38.50    13.50     2.85,   1,    -3.87 cannot be assigned to   40   15   29
+        because another sample is already there
+   38.50    13.50     4.45,   1,    -4.50 cannot be assigned to   40   15   45
+        because another sample is already there
+   38.50    13.50     4.95,   1,    -5.16 cannot be assigned to   40   15   50
+        because another sample is already there
+   38.50    13.50     5.45,   1,    -4.53 cannot be assigned to   40   15   55
+        because another sample is already there
+   38.50    13.50     5.95,   1,   -11.00 cannot be assigned to   40   15   60
+        because another sample is already there
+   38.50    13.50     8.15,   1,    -9.42 cannot be assigned to   40   15   82
+        because another sample is already there
+   38.50    13.50     8.65,   1,   -10.29 cannot be assigned to   40   15   87
+        because another sample is already there
+   38.50    13.50     9.15,   1,    -4.01 cannot be assigned to   40   15   92
+        because another sample is already there
+   38.50    13.50     9.65,   1,    -9.83 cannot be assigned to   40   15   97
+        because another sample is already there
+   38.50    13.50     9.95,   1    -9.58 is out of bounds     (  40   15  101)
+   39.50    12.50     0.65,   1,    -4.68 cannot be assigned to   41   14    7
+        because another sample is already there
+   39.50    12.50     1.05,   1,    -5.31 cannot be assigned to   41   14   11
+        because another sample is already there
+   39.50    12.50     1.55,   1,    -4.13 cannot be assigned to   41   14   16
+        because another sample is already there
+   39.50    12.50     2.35,   1,    -3.41 cannot be assigned to   41   14   24
+        because another sample is already there
+   39.50    12.50     2.85,   1,    -3.80 cannot be assigned to   41   14   29
+        because another sample is already there
+   39.50    12.50     4.45,   1,    -3.92 cannot be assigned to   41   14   45
+        because another sample is already there
+   39.50    12.50     4.95,   1,    -5.77 cannot be assigned to   41   14   50
+        because another sample is already there
+   39.50    12.50     5.45,   1,    -4.11 cannot be assigned to   41   14   55
+        because another sample is already there
+   39.50    12.50     5.95,   1,   -11.14 cannot be assigned to   41   14   60
+        because another sample is already there
+   39.50    12.50     8.15,   1,    -8.62 cannot be assigned to   41   14   82
+        because another sample is already there
+   39.50    12.50     8.65,   1,    -9.74 cannot be assigned to   41   14   87
+        because another sample is already there
+   39.50    12.50     9.15,   1,    -5.84 cannot be assigned to   41   14   92
+        because another sample is already there
+   39.50    12.50     9.65,   1,   -10.25 cannot be assigned to   41   14   97
+        because another sample is already there
+   39.50    12.50     9.95,   1    -8.30 is out of bounds     (  41   14  101)
+   29.50     1.50     0.65,   1,    -5.08 cannot be assigned to   31    3    7
+        because another sample is already there
+   29.50     1.50     1.05,   1,    -4.78 cannot be assigned to   31    3   11
+        because another sample is already there
+   29.50     1.50     1.55,   1,    -4.45 cannot be assigned to   31    3   16
+        because another sample is already there
+   29.50     1.50     2.35,   1,    -5.48 cannot be assigned to   31    3   24
+        because another sample is already there
+   29.50     1.50     2.85,   1,   -10.24 cannot be assigned to   31    3   29
+        because another sample is already there
+   29.50     1.50     4.45,   1,    -3.10 cannot be assigned to   31    3   45
+        because another sample is already there
+   29.50     1.50     4.95,   1,    -4.91 cannot be assigned to   31    3   50
+        because another sample is already there
+   29.50     1.50     5.45,   1,    -3.49 cannot be assigned to   31    3   55
+        because another sample is already there
+   29.50     1.50     5.95,   1,    -7.78 cannot be assigned to   31    3   60
+        because another sample is already there
+   29.50     1.50     8.15,   1,    -3.42 cannot be assigned to   31    3   82
+        because another sample is already there
+   29.50     1.50     8.65,   1,    -5.30 cannot be assigned to   31    3   87
+        because another sample is already there
+   29.50     1.50     9.15,   1,    -5.10 cannot be assigned to   31    3   92
+        because another sample is already there
+   29.50     1.50     9.65,   1,    -9.78 cannot be assigned to   31    3   97
+        because another sample is already there
+   29.50     1.50     9.95,   1    -7.96 is out of bounds     (  31    3  101)
+   28.50    18.50     0.65,   1,    -2.44 cannot be assigned to   30   20    7
+        because another sample is already there
+   28.50    18.50     1.05,   1,    -8.38 cannot be assigned to   30   20   11
+        because another sample is already there
+   28.50    18.50     1.55,   1,    -8.93 cannot be assigned to   30   20   16
+        because another sample is already there
+   28.50    18.50     2.35,   1,   -10.14 cannot be assigned to   30   20   24
+        because another sample is already there
+   28.50    18.50     2.85,   1,    -3.12 cannot be assigned to   30   20   29
+        because another sample is already there
+   28.50    18.50     4.45,   1,    -4.48 cannot be assigned to   30   20   45
+        because another sample is already there
+   28.50    18.50     4.95,   1,    -3.60 cannot be assigned to   30   20   50
+        because another sample is already there
+   28.50    18.50     5.45,   1,    -4.84 cannot be assigned to   30   20   55
+        because another sample is already there
+   28.50    18.50     5.95,   1,    -7.48 cannot be assigned to   30   20   60
+        because another sample is already there
+   28.50    18.50     8.15,   1,    -9.35 cannot be assigned to   30   20   82
+        because another sample is already there
+   28.50    18.50     8.65,   1,   -10.08 cannot be assigned to   30   20   87
+        because another sample is already there
+   28.50    18.50     9.15,   1,    -9.18 cannot be assigned to   30   20   92
+        because another sample is already there
+   28.50    18.50     9.65,   1,    -9.32 cannot be assigned to   30   20   97
+        because another sample is already there
+   28.50    18.50     9.95,   1    -8.78 is out of bounds     (  30   20  101)
+   38.50    15.50     0.65,   1,    -4.71 cannot be assigned to   40   17    7
+        because another sample is already there
+   38.50    15.50     1.05,   1,    -4.65 cannot be assigned to   40   17   11
+        because another sample is already there
+   38.50    15.50     1.55,   1,    -5.86 cannot be assigned to   40   17   16
+        because another sample is already there
+   38.50    15.50     2.35,   1,    -5.45 cannot be assigned to   40   17   24
+        because another sample is already there
+   38.50    15.50     2.85,   1,    -4.58 cannot be assigned to   40   17   29
+        because another sample is already there
+   38.50    15.50     4.45,   1,    -3.63 cannot be assigned to   40   17   45
+        because another sample is already there
+   38.50    15.50     4.95,   1,    -5.31 cannot be assigned to   40   17   50
+        because another sample is already there
+   38.50    15.50     5.45,   1,    -4.70 cannot be assigned to   40   17   55
+        because another sample is already there
+   38.50    15.50     5.95,   1,    -9.10 cannot be assigned to   40   17   60
+        because another sample is already there
+   38.50    15.50     8.15,   1,    -9.76 cannot be assigned to   40   17   82
+        because another sample is already there
+   38.50    15.50     8.65,   1,    -8.22 cannot be assigned to   40   17   87
+        because another sample is already there
+   38.50    15.50     9.15,   1,    -9.40 cannot be assigned to   40   17   92
+        because another sample is already there
+   38.50    15.50     9.65,   1,    -9.12 cannot be assigned to   40   17   97
+        because another sample is already there
+   38.50    15.50     9.95,   1    -7.88 is out of bounds     (  40   17  101)
+   26.50    12.50     0.65,   1,    -4.67 cannot be assigned to   28   14    7
+        because another sample is already there
+   26.50    12.50     1.05,   1,    -4.41 cannot be assigned to   28   14   11
+        because another sample is already there
+   26.50    12.50     1.55,   1,    -8.48 cannot be assigned to   28   14   16
+        because another sample is already there
+   26.50    12.50     2.35,   1,    -5.18 cannot be assigned to   28   14   24
+        because another sample is already there
+   26.50    12.50     2.85,   1,    -3.18 cannot be assigned to   28   14   29
+        because another sample is already there
+   26.50    12.50     4.45,   1,    -4.34 cannot be assigned to   28   14   45
+        because another sample is already there
+   26.50    12.50     4.95,   1,    -4.94 cannot be assigned to   28   14   50
+        because another sample is already there
+   26.50    12.50     5.45,   1,    -3.63 cannot be assigned to   28   14   55
+        because another sample is already there
+   26.50    12.50     5.95,   1,   -10.56 cannot be assigned to   28   14   60
+        because another sample is already there
+   26.50    12.50     8.15,   1,    -5.45 cannot be assigned to   28   14   82
+        because another sample is already there
+   26.50    12.50     8.65,   1,    -4.68 cannot be assigned to   28   14   87
+        because another sample is already there
+   26.50    12.50     9.15,   1,    -5.16 cannot be assigned to   28   14   92
+        because another sample is already there
+   26.50    12.50     9.65,   1,    -9.33 cannot be assigned to   28   14   97
+        because another sample is already there
+   26.50    12.50     9.95,   1    -7.90 is out of bounds     (  28   14  101)
+   31.50    14.50     0.65,   1,    -4.37 cannot be assigned to   33   16    7
+        because another sample is already there
+   31.50    14.50     1.05,   1,    -8.88 cannot be assigned to   33   16   11
+        because another sample is already there
+   31.50    14.50     1.55,   1,    -3.53 cannot be assigned to   33   16   16
+        because another sample is already there
+   31.50    14.50     2.35,   1,    -4.97 cannot be assigned to   33   16   24
+        because another sample is already there
+   31.50    14.50     2.85,   1,    -4.11 cannot be assigned to   33   16   29
+        because another sample is already there
+   31.50    14.50     4.45,   1,    -5.15 cannot be assigned to   33   16   45
+        because another sample is already there
+   31.50    14.50     4.95,   1,    -3.37 cannot be assigned to   33   16   50
+        because another sample is already there
+   31.50    14.50     5.45,   1,    -3.05 cannot be assigned to   33   16   55
+        because another sample is already there
+   31.50    14.50     5.95,   1,   -11.07 cannot be assigned to   33   16   60
+        because another sample is already there
+   31.50    14.50     8.15,   1,    -8.59 cannot be assigned to   33   16   82
+        because another sample is already there
+   31.50    14.50     8.65,   1,    -5.09 cannot be assigned to   33   16   87
+        because another sample is already there
+   31.50    14.50     9.15,   1,    -5.61 cannot be assigned to   33   16   92
+        because another sample is already there
+   31.50    14.50     9.65,   1,    -7.70 cannot be assigned to   33   16   97
+        because another sample is already there
+   31.50    14.50     9.95,   1    -8.11 is out of bounds     (  33   16  101)
+   20.50     7.50     0.65,   1,    -5.05 cannot be assigned to   22    9    7
+        because another sample is already there
+   20.50     7.50     1.05,   1,    -4.73 cannot be assigned to   22    9   11
+        because another sample is already there
+   20.50     7.50     1.55,   1,    -4.33 cannot be assigned to   22    9   16
+        because another sample is already there
+   20.50     7.50     2.35,   1,    -3.68 cannot be assigned to   22    9   24
+        because another sample is already there
+   20.50     7.50     2.85,   1,    -4.13 cannot be assigned to   22    9   29
+        because another sample is already there
+   20.50     7.50     4.45,   1,    -3.66 cannot be assigned to   22    9   45
+        because another sample is already there
+   20.50     7.50     4.95,   1,    -5.64 cannot be assigned to   22    9   50
+        because another sample is already there
+   20.50     7.50     5.45,   1,    -5.05 cannot be assigned to   22    9   55
+        because another sample is already there
+   20.50     7.50     5.95,   1,    -8.51 cannot be assigned to   22    9   60
+        because another sample is already there
+   20.50     7.50     8.15,   1,    -5.23 cannot be assigned to   22    9   82
+        because another sample is already there
+   20.50     7.50     8.65,   1,    -4.67 cannot be assigned to   22    9   87
+        because another sample is already there
+   20.50     7.50     9.15,   1,    -5.14 cannot be assigned to   22    9   92
+        because another sample is already there
+   20.50     7.50     9.65,   1,    -7.44 cannot be assigned to   22    9   97
+        because another sample is already there
+   20.50     7.50     9.95,   1    -8.14 is out of bounds     (  22    9  101)
+    8.50    11.50     0.65,   1,    -4.30 cannot be assigned to   10   13    7
+        because another sample is already there
+    8.50    11.50     1.05,   1,    -4.09 cannot be assigned to   10   13   11
+        because another sample is already there
+    8.50    11.50     1.55,   1,    -4.50 cannot be assigned to   10   13   16
+        because another sample is already there
+    8.50    11.50     2.35,   1,    -3.50 cannot be assigned to   10   13   24
+        because another sample is already there
+    8.50    11.50     2.85,   1,    -6.19 cannot be assigned to   10   13   29
+        because another sample is already there
+    8.50    11.50     4.45,   1,    -8.34 cannot be assigned to   10   13   45
+        because another sample is already there
+    8.50    11.50     4.95,   1,    -4.72 cannot be assigned to   10   13   50
+        because another sample is already there
+    8.50    11.50     5.45,   1,    -3.15 cannot be assigned to   10   13   55
+        because another sample is already there
+    8.50    11.50     5.95,   1,    -9.11 cannot be assigned to   10   13   60
+        because another sample is already there
+    8.50    11.50     8.15,   1,    -5.15 cannot be assigned to   10   13   82
+        because another sample is already there
+    8.50    11.50     8.65,   1,    -3.04 cannot be assigned to   10   13   87
+        because another sample is already there
+    8.50    11.50     9.15,   1,    -4.85 cannot be assigned to   10   13   92
+        because another sample is already there
+    8.50    11.50     9.65,   1,    -8.55 cannot be assigned to   10   13   97
+        because another sample is already there
+    8.50    11.50     9.95,   1    -7.12 is out of bounds     (  10   13  101)
+   11.50    16.50     0.65,   1,    -3.34 cannot be assigned to   13   18    7
+        because another sample is already there
+   11.50    16.50     1.05,   1,    -4.95 cannot be assigned to   13   18   11
+        because another sample is already there
+   11.50    16.50     1.55,   1,    -3.72 cannot be assigned to   13   18   16
+        because another sample is already there
+   11.50    16.50     2.35,   1,    -3.05 cannot be assigned to   13   18   24
+        because another sample is already there
+   11.50    16.50     2.85,   1,    -5.61 cannot be assigned to   13   18   29
+        because another sample is already there
+   11.50    16.50     4.45,   1,    -7.88 cannot be assigned to   13   18   45
+        because another sample is already there
+   11.50    16.50     4.95,   1,    -5.89 cannot be assigned to   13   18   50
+        because another sample is already there
+   11.50    16.50     5.45,   1,    -4.37 cannot be assigned to   13   18   55
+        because another sample is already there
+   11.50    16.50     5.95,   1,   -10.28 cannot be assigned to   13   18   60
+        because another sample is already there
+   11.50    16.50     8.15,   1,    -8.19 cannot be assigned to   13   18   82
+        because another sample is already there
+   11.50    16.50     8.65,   1,    -9.58 cannot be assigned to   13   18   87
+        because another sample is already there
+   11.50    16.50     9.15,   1,    -7.38 cannot be assigned to   13   18   92
+        because another sample is already there
+   11.50    16.50     9.65,   1,    -7.28 cannot be assigned to   13   18   97
+        because another sample is already there
+   11.50    16.50     9.95,   1    -5.63 is out of bounds     (  13   18  101)
+   35.50    12.50     0.65,   1,    -5.37 cannot be assigned to   37   14    7
+        because another sample is already there
+   35.50    12.50     1.05,   1,    -3.81 cannot be assigned to   37   14   11
+        because another sample is already there
+   35.50    12.50     1.55,   1,    -4.84 cannot be assigned to   37   14   16
+        because another sample is already there
+   35.50    12.50     2.35,   1,    -2.06 cannot be assigned to   37   14   24
+        because another sample is already there
+   35.50    12.50     2.85,   1,    -5.21 cannot be assigned to   37   14   29
+        because another sample is already there
+   35.50    12.50     4.45,   1,    -3.04 cannot be assigned to   37   14   45
+        because another sample is already there
+   35.50    12.50     4.95,   1,    -4.14 cannot be assigned to   37   14   50
+        because another sample is already there
+   35.50    12.50     5.45,   1,    -5.48 cannot be assigned to   37   14   55
+        because another sample is already there
+   35.50    12.50     5.95,   1,   -11.03 cannot be assigned to   37   14   60
+        because another sample is already there
+   35.50    12.50     8.15,   1,    -9.04 cannot be assigned to   37   14   82
+        because another sample is already there
+   35.50    12.50     8.65,   1,    -4.30 cannot be assigned to   37   14   87
+        because another sample is already there
+   35.50    12.50     9.15,   1,    -4.46 cannot be assigned to   37   14   92
+        because another sample is already there
+   35.50    12.50     9.65,   1,   -11.24 cannot be assigned to   37   14   97
+        because another sample is already there
+   35.50    12.50     9.95,   1   -10.42 is out of bounds     (  37   14  101)
+   38.50    16.50     0.65,   1,    -5.89 cannot be assigned to   40   18    7
+        because another sample is already there
+   38.50    16.50     1.05,   1,    -9.04 cannot be assigned to   40   18   11
+        because another sample is already there
+   38.50    16.50     1.55,   1,    -5.68 cannot be assigned to   40   18   16
+        because another sample is already there
+   38.50    16.50     2.35,   1,    -4.87 cannot be assigned to   40   18   24
+        because another sample is already there
+   38.50    16.50     2.85,   1,    -4.71 cannot be assigned to   40   18   29
+        because another sample is already there
+   38.50    16.50     4.45,   1,    -3.51 cannot be assigned to   40   18   45
+        because another sample is already there
+   38.50    16.50     4.95,   1,    -4.83 cannot be assigned to   40   18   50
+        because another sample is already there
+   38.50    16.50     5.45,   1,    -5.07 cannot be assigned to   40   18   55
+        because another sample is already there
+   38.50    16.50     5.95,   1,    -9.45 cannot be assigned to   40   18   60
+        because another sample is already there
+   38.50    16.50     8.15,   1,    -9.90 cannot be assigned to   40   18   82
+        because another sample is already there
+   38.50    16.50     8.65,   1,    -8.69 cannot be assigned to   40   18   87
+        because another sample is already there
+   38.50    16.50     9.15,   1,   -10.37 cannot be assigned to   40   18   92
+        because another sample is already there
+   38.50    16.50     9.65,   1,   -10.02 cannot be assigned to   40   18   97
+        because another sample is already there
+   38.50    16.50     9.95,   1    -7.97 is out of bounds     (  40   18  101)
+   39.50    10.50     0.65,   1,    -4.21 cannot be assigned to   41   12    7
+        because another sample is already there
+   39.50    10.50     1.05,   1,    -6.35 cannot be assigned to   41   12   11
+        because another sample is already there
+   39.50    10.50     1.55,   1,    -4.90 cannot be assigned to   41   12   16
+        because another sample is already there
+   39.50    10.50     2.35,   1,    -4.05 cannot be assigned to   41   12   24
+        because another sample is already there
+   39.50    10.50     2.85,   1,    -4.96 cannot be assigned to   41   12   29
+        because another sample is already there
+   39.50    10.50     4.45,   1,    -5.98 cannot be assigned to   41   12   45
+        because another sample is already there
+   39.50    10.50     4.95,   1,    -3.74 cannot be assigned to   41   12   50
+        because another sample is already there
+   39.50    10.50     5.45,   1,    -5.55 cannot be assigned to   41   12   55
+        because another sample is already there
+   39.50    10.50     5.95,   1,   -10.88 cannot be assigned to   41   12   60
+        because another sample is already there
+   39.50    10.50     8.15,   1,    -7.78 cannot be assigned to   41   12   82
+        because another sample is already there
+   39.50    10.50     8.65,   1,    -4.11 cannot be assigned to   41   12   87
+        because another sample is already there
+   39.50    10.50     8.95,   1,    -4.75 assigned to             41   12   91
+                                 value -4.748 
+   39.50    10.50     9.05,   1,    -4.82 assigned to             41   12   92
+                                 value -4.823 
+   39.50    10.50     9.15,   1,    -4.97 cannot be assigned to   41   12   92
+        because another sample is already there
+   39.50    10.50     9.25,   1,    -4.95 assigned to             41   12   94
+                                 value -4.952 
+   39.50    10.50     9.35,   1,    -4.14 assigned to             41   12   95
+                                 value -4.135 
+   39.50    10.50     9.45,   1,    -3.54 assigned to             41   12   96
+                                 value -3.535 
+   39.50    10.50     9.55,   1,    -8.89 assigned to             41   12   97
+                                 value -8.888 
+   39.50    10.50     9.65,   1,    -8.78 cannot be assigned to   41   12   97
+        because another sample is already there
+   39.50    10.50     9.75,   1,    -9.26 assigned to             41   12   99
+                                 value -9.264 
+   39.50    10.50     9.85,   1,    -9.42 assigned to             41   12  100
+                                 value -9.419 
+   39.50    10.50     9.95,   1    -8.35 is out of bounds     (  41   12  101)
+
+The total area to be simulated has dimensions 50 x 20 x 100
+
+A random permutation of 100000 integers has been created:
+First few values are 54605 10329 12365 35098 35524
+
+
+The total area to be simulated has dimensions 50 x 20 x 100
+
+A random permutation of 100000 integers has been created:
+First few values are 85816 33299 11037 20854 13255
+

@@ -1,0 +1,460 @@
+# -*- coding: utf-8 -*-
+"""
+Utilities for dtgeostats
+
+"""
+
+import os
+import time
+import pickle
+import pandas as pd
+import numpy as np
+import numba as nb
+import configparser as cp
+import scipy.interpolate as si
+import scipy.stats as st
+
+import hyvr
+
+""" ============================================================
+    Utilities
+    ==========================================================  """
+
+def pop_parameters(in_ini, out_ini, setp=[], remove=[]):
+    """
+    Edit *.ini parameter files with new values
+
+    Parameters
+    ----------
+    in_ini (str):                   Input parameter file path
+    out_ini (str):                  Output parameter file path
+    setp (tuple of 3-tuples):         Parameters to set
+    remove (tuple of 2-tuples):      Parameters to remove
+
+    Return
+    ------
+    p (configparser)
+
+    """
+
+    """ Load parameter template """
+    config = cp.ConfigParser()
+    p = cp.ConfigParser()
+    p.read(in_ini)
+
+    if setp is not None:
+        for iset in setp:
+            p.set(iset[0], iset[1], str(iset[2]))
+
+    if remove is not None:
+        for irem in remove:
+            p.remove_option(irem[0], irem[1])
+
+    # Save it all
+    with open(out_ini, 'w') as configfile:
+        p.write(configfile)
+
+    return p
+
+
+def gslib_to(fgslib, fout=False):
+    """ Convert GSLIB grid file into numpy arrays """
+
+
+    with open(fgslib, 'r') as f:
+        gr = next(f).strip().split()
+        nvar = int(next(f).strip())
+        vars = [next(f).strip() for i in range(nvar)]
+
+    gslib_data = np.loadtxt(fgslib, skiprows=2+nvar)        # Load data
+    dict_out = dict()                                         # Initialise list of numpy arrays
+    for iv, v in enumerate(vars):
+        vname = v.split('_real')[0]
+        dict_out[vname] = np.ascontiguousarray(np.reshape(gslib_data[:, iv], [int(i) for i in gr[:3]], order='F'))
+
+    if fout == 'pickle':
+        outfile = fgslib[:-5] + 'dat'
+        with open(outfile, 'wb') as pickle_file:
+            pickle.dump(dict_out, pickle_file, protocol=pickle.HIGHEST_PROTOCOL)
+    elif fout == 'h5':
+        import h5py
+        with h5py.File(fgslib[:-5]+'h5', 'w') as hf:
+                for key in dict_out.keys():
+                    hf.create_dataset(key, data=dict_out[key], compression=True)
+    return dict_out
+
+
+""" ============================================================
+    Normal score transformation utilities
+
+    Taken from http://connor-johnson.com/2014/06/12/z-score-transform-for-geostatistics/
+
+    ==========================================================  """
+
+
+def cdf(d, bins=12):
+    """
+    Get CDF
+
+    :param d, list of input data
+    :param bins:
+    :return:
+    """
+    N = len(d)
+    counts, intervals = np.histogram(d, bins=bins)
+    h = np.diff(intervals) / 2.0
+    f, finv = np.zeros((N, 2)), np.zeros((N, 2))
+    idx, k, T = 0, 0, float(np.sum(counts))
+    for count in counts:
+        for i in range(count):
+            x = intervals[idx]+h[0]
+            y = np.cumsum(counts[:idx+1])[-1] / T
+            f[k, :] = x, y
+            finv[k, :] = y, x
+            k += 1
+        idx += 1
+    return f, finv
+
+
+def fit(d):
+    """
+    "This next awkward function returns an interpolation function for the CDFs created by the previous function.
+    It’s a function that returns a function, thanks to functions being first class citizens in Python land.
+    The basis of this function is the scipy.interpolate.interp1d() function, but since this function throws an error
+    when you give it a value outside the original interpolation range, I’ve taken care of those boundary conditions.
+    I could have alternatively used a try/except structure, and I may yet, but this works for now."
+
+    :param d:
+    :return:
+    """
+    x, y = d[:, 0], d[:, 1]
+
+    def f(t):
+        if t <= x.min():
+            return y[np.argmin(x)]
+        elif t >= x.max():
+            return y[np.argmax(x)]
+        else:
+            intr = si.interp1d(x, y)
+        return intr(t)
+    return f
+
+
+def to_norm(data):
+    """
+    Transform data to normal distribution
+
+    :param data:
+    :param bins:
+    :return:
+    """
+    mu = np.mean(data)
+    sd = np.std(data)
+    z = (data - mu) / sd
+    bins = len(data) * 10
+    f, inv = cdf(z, bins=bins)
+    z = st.norm(0, 1).ppf(f[:, 1])
+    z = np.where(z == np.inf, np.nan, z)
+    z = np.where(np.isnan(z), np.nanmax(z), z)
+    return z, inv
+
+
+def from_norm(data, inv, mu, sd):
+    """
+    Transform normal-score data to previous distribution
+    :param data:
+    :param inv:
+    :param mu:
+    :param sd:
+    :return:
+    """
+    h = fit(inv)
+    f = st.norm(0, 1).cdf(data)
+    z = [h(i)*sd + mu for i in f]
+
+    #------------------
+    # f = st.norm(0, 1).cdf(data)
+    # from scipy.interpolate import InterpolatedUnivariateSpline
+    # spl = InterpolatedUnivariateSpline(inv[:, 0], inv[:, 1], ext=0)
+    # spl(f) * mu + sd
+
+
+    # --------------------------
+
+    return z
+
+""" ============================================================ """
+
+""" ============================================================
+    Two-point geostatistics methods  (UNDER CONSTRUCTION!!)
+    ==========================================================  """
+
+def condreal(gsm, mg, bhdf, nreal=1):
+
+    # Array of interpolation point coordinates (model mesh)
+    xint, yint, zint = mg.meshup()
+    Xint = np.array((xint.flatten(), yint.flatten(), zint.flatten())).T
+    n = np.shape(Xint)[0]
+
+    # Array of measured point coordinates
+    Xmeas = bhdf[['x', 'y', 'z']].values
+    smeas = np.log(bhdf['k_iso'].values)
+    indmeas = np.floor(Xmeas/[mg.dx, mg.dy, mg.dz]).astype(int)
+    m = np.shape(Xint)[0]
+
+    # Discretized trend functions
+    X = np.ones((n, 1))
+    Xm = np.ones((m, 1))
+
+    # Construct covariance matrix of measurement error
+    sig_meas = 1e-10
+    #R = np.identity(m) * sig_meas ** 2
+
+    # Covariance matrix of interpolation locations and measurement locations
+    print(time.strftime("%d-%m %H:%M:%S", time.localtime(time.time())) + ': Solving covariance matrices')
+    Qssm = nb_covarmat_s(Xint, Xmeas, gsm)
+
+     # Auto-covariance matrix of measurement locations
+    Qsmsm = nb_covarmat_s(Xmeas, Xmeas, gsm)
+
+    # Kriging matrix and its inverse
+    krigmat = np.block([[Qsmsm, Xm], [Xm.T, 0]])
+
+    for nr in range(0, nreal):
+        pass
+        # Generate unconditional field
+        s_unc = np.ascontiguousarray(specsim(mg, gsm))
+
+        # gvec = mg.vec_node()
+        # gridToVTK('test', gvec[0], gvec[1], gvec[2], cellData={'ss': s_unc})
+
+        # Evaluate unconditional field at measurement points
+        s_unc_at_meas = np.empty(0)
+        for idx in indmeas:
+           s_unc_at_meas = np.append(s_unc_at_meas, s_unc[idx[0], idx[1], idx[2]])
+
+        # Perturb the measurements and subtract the unconditional realization
+        s_pert = smeas + sig_meas * np.random.normal(np.shape(smeas)) - s_unc_at_meas
+
+        # Solve the kriging equation
+
+
+def specsim(gr, gsm):
+    """
+    Generate random variables stationary covariance function using spectral techniques of Dietrich & Newsam (1993)
+
+    Parameters:
+        gr:     	Grid class object
+        var:    	Variance
+        gsm :
+            geostatistical model class
+            corl:   	Tuple of correlation length of random variable
+            twod:   	Flag for two-dimensional simulation
+            covmod: 	Which covariance model to use ('gau' = Gaussian, 'exp' = Exponential).
+
+    Returns:
+        bigy - Random gaussian variable. Real part of a complex array, created via inverse DFT
+
+    """
+
+    if gsm.ndim == 2:
+        yy, xx = np.meshgrid(np.arange(-gr.ny*0.5*gr.dy, gr.ny*0.5*gr.dy, gr.dy),
+                             np.arange(-gr.nx*0.5*gr.dx, gr.nx*0.5*gr.dx, gr.dx))
+        h = ((xx / gsm.lx) ** 2 + (yy / gsm.ly) ** 2) ** 0.5      # Compute distance from origin
+
+    elif gsm.ndim == 3:
+        yy, xx, zz = np.meshgrid(np.arange(-gr.ny*0.5*gr.dy, gr.ny*0.5*gr.dy, gr.dy),
+                                 np.arange(-gr.nx*0.5*gr.dx, gr.nx*0.5*gr.dx, gr.dx),
+                                 np.arange(-gr.nz*0.5*gr.dz, gr.nz*0.5*gr.dz, gr.dz))
+
+        # Compute distance from origin
+        h = ((xx / gsm.lx) ** 2 + (yy / gsm.ly) ** 2 + (zz / gsm.lz) ** 2) ** 0.5
+
+    ntot = np.size(xx)
+
+    # Covariance matrix of variables
+    if gsm.cmodel == 'Gau':
+        # Gaussian covariance model
+        ryy = np.exp(-h**2) * gsm.sig2
+    elif gsm.cmodel == 'Exp':
+        # Exponential covariance model
+        ryy = np.exp(-np.abs(h)) * gsm.sig2
+    else:
+        ValueError('Invalid covariance model')
+
+    # Power spectrum of variable
+    syy = np.fft.fftn(np.fft.fftshift(ryy)) / ntot
+    syy = np.abs(syy)       # Remove imaginary artifacts
+    if gsm.ndim == 2:
+        syy[0, 0] = 0
+    else:
+        syy[0, 0, 0] = 0
+
+    # st.norm.rvs calls cost a bit more than np.radom.randn
+    # real = st.norm.rvs(size=syy.shape)
+    # imag = st.norm.rvs(size=syy.shape)
+    real = np.random.randn(*syy.shape)
+    imag = np.random.randn(*syy.shape)
+    epsilon = real + 1j*imag
+    rand = epsilon * np.sqrt(syy)
+    bigy = np.real(np.fft.ifftn(rand * ntot))
+
+    return bigy
+
+
+class gsmodel():
+    """ Geostatistical model """
+
+    def __init__(self,
+                 name,
+                 variable,
+                 cmodel,
+                 sig2,
+                 lx=1,
+                 ly=None,
+                 lz=None,
+                 log=False):
+        """
+
+        Parameters
+        ----------
+        name : str
+            Name of model
+        variable : str
+            Variable to model
+        cmodel : str ['Sph', 'Gau', 'Exp']
+            Geostatistical covariance model
+        sig2 :  float
+            Variance of parameter
+        lx : float
+            correlation length in x
+        ly, lz : floats, optional
+            correlation length in y, z
+        log : bool (default)
+            Is variable log distributed?
+        """
+
+        self.name = name
+        self.variable = variable
+        self.cmodel = cmodel
+        self.sig2 = sig2
+        self.lx = lx
+        self.ndim = 1
+        if ly is not None:
+            self.ly = ly
+            self.ndim = 2
+        if lz is not None:
+            self.lz = lz
+            self.ndim = 3
+        self.log = log
+
+
+def covarmat_s(Xint, Xmeas, gsm):
+    """
+    Covariance matrix between interpolation and observation points for given trend coefficients
+    (See Olaf Cirpka's codes from RTG Fall School, 2017)
+
+    Parameters
+    ----------
+    Xint :
+        (n x dim): interpolation locations
+    Xmeas:
+        (m x dim): measurement locations
+    gsm: gsmodel class
+
+    Return
+    ------
+    Q_ssm
+
+    """
+
+    m, dim = np.shape(Xmeas)
+    n, _ = np.shape(Xint)
+
+    # scaled distance between all points
+    deltaXnorm = (addem(Xint[:, 0]) * np.ones((1, m)) - np.ones((n, 1)) * addem(Xmeas[:, 0]).T) / gsm.lx
+
+    if dim > 1:
+       deltaYnorm = (addem(Xint[:, 1]) * np.ones((1, m)) - np.ones((n, 1)) * addem(Xmeas[:, 1]).T) / gsm.ly
+       if dim == 3:
+          deltaZnorm = (addem(Xint[:, 2]) * np.ones((1, m)) - np.ones((n, 1)) * addem(Xmeas[:, 2]).T) / gsm.lz
+          H = np.sqrt(deltaXnorm ** 2 + deltaYnorm **2 + deltaZnorm ** 2)
+       else:
+          H = np.sqrt(deltaXnorm ** 2 + deltaYnorm ** 2)
+    else:
+       H = abs(deltaXnorm)
+
+    if gsm.cmodel is 'Exp':
+        Q_ssm = gsm.sig2 * np.exp(-H)
+    elif gsm.cmodel is 'Gau':
+        Q_ssm = gsm.sig2 * np.exp(-H ** 2)
+    elif gsm.cmodel is 'Sph':
+        Q_ssm = gsm.sig2 * (1 - 1.5 * H + 0.5 * H ** 3)
+        Q_ssm[H > 1] = 0
+
+    return Q_ssm
+
+
+def nb_covarmat_s(vec_1, vec_2, gsm):
+
+    h = nb_distnorm(vec_1, vec_2, lx=gsm.lx, ly=gsm.ly, lz=gsm.lz)
+
+    if gsm.cmodel is 'Exp':
+        Q_ssm = gsm.sig2 * np.exp(-h)
+    elif gsm.cmodel is 'Gau':
+        Q_ssm = gsm.sig2 * np.exp(-h ** 2)
+    elif gsm.cmodel is 'Sph':
+        Q_ssm = gsm.sig2 * (1 - 1.5 * h + 0.5 * h ** 3)
+        Q_ssm[h > 1] = 0
+    return Q_ssm
+
+@nb.njit(fastmath=True, parallel=True)
+def nb_distnorm(vec_1, vec_2, lx=1, ly=1, lz=1):
+    """
+    Get distances from all points in vector 1 to all points in vector 2
+
+    Parameters
+    ----------
+    :param vec_1:
+    :param vec_2:
+    :param lx:
+    :param ly:
+    :param lz:
+    :return:
+    """
+    h = np.empty((vec_1.shape[0], vec_2.shape[0]), dtype=vec_1.dtype)
+    for i in nb.prange(vec_1.shape[0]):
+        for j in range(vec_2.shape[0]):
+            dXnorm = (vec_1[i, 0] - vec_2[j, 0]) / lx
+            dYnorm = (vec_1[i, 1] - vec_2[j, 1]) / ly
+            dZnorm = (vec_1[i, 2] - vec_2[j, 2]) / lz
+            h[i, j] = np.sqrt(dXnorm**2 + dYnorm**2 + dZnorm**2)
+
+    return h
+
+
+def addem(inarr):
+    """ Add dimension to vector """
+    return np.expand_dims(inarr, axis=1)
+
+"""=================================
+Testing functions
+===================================="""
+if __name__ == '__main__':
+
+    # Parameter file
+    #ini = 'E:\\Repositories\\WP3_effects\\fidelity\\braid002\\braid.ini'
+    ini = 'E:\\Repositories\\WP3_effects\\fidelity\\small\\small.ini'
+    run, mod, strata, hydraulics, flowtrans, elements, mg = hyvr.parameters.model_setup(ini, nodir=True)
+
+    # Get virtual borehole data for conditioning
+    #fbh = "E:\\Repositories\\WP3_effects\\fidelity\\braid002\\braid_vr_bh100.txt"
+    fbh = 'E:\\Repositories\\WP3_effects\\fidelity\\small\\small_vr_bh100.txt'
+    bhdf = pd.read_csv(fbh)
+
+    # Create geostatistical model
+    # gs_bh100 = gsmodel('bh40', 'Exp', 2.9, lx=2.9, ly=2.6, lz=0.7)
+    gs_bh100 = gsmodel('bh40', 'Exp', 2.9, lx=2.9, ly=2.6, lz=0.7, log=True)
+
+
+    condreal(gs_bh100, mg, bhdf)

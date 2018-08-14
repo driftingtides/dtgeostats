@@ -1,0 +1,6 @@
+<variogram_model  nugget="0" structures_count="1"  >
+  <structure_1  contribution="0.064"  type="Spherical"   >
+    <ranges max="36"  medium="27.5"  min="1.35"   />
+    <angles x="90"  y="0"  z="0"   />
+  </structure_1>
+</variogram_model>
